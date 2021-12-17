@@ -55,14 +55,56 @@
             border-radius: 30px;
             background: #adadad;
         }
-
+        .circle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .logo{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: url(me.jpg);
+            background-size: cover;
+            filter: grayscale() contrast(1.5);
+        }
+        .text{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: textRotate 10s linear infinite;
+            color: #fff;
+        }
+        @keyframes textRotate {
+            from{
+                transform: rotate(360deg)
+            }to{
+                transform: rotate(0deg)
+            }
+        }
+        .text span{
+            position: absolute;
+            left: 50%;
+            font-size: 1.2em;
+            transform-origin: 0 100px;
+        }
     </style>
 </head>
 <body>
     <h3 class="top">Under Construction !</h3>
     <div class="container">
         <div class="main">
-            Oops! 404
+            <div class="circle">
+                <div class="logo"></div>
+                <div class="text">
+                    <p>Shahin Sarkar - Creative Frontend Developer -</p>
+                </div>
+            </div>
         </div>
         <h3>Shahin Sarkar</h3>
         <h4>Frontend Web Developer (React, Vue)</h4>
@@ -100,6 +142,10 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+        const text = document.querySelector('.text p');
+        text.innerHTML = text.innerText.split('').map( (char, i) => `<span style="transform: rotate(${i * 7.9}deg)">${char}</span>`).join('');
     </script>
 </body>
 </html>
