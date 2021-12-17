@@ -5,55 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shahin 🥺</title>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,900&display=swap');
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: consolas;
+        }
         body{
-            background: #E26A2C;
-            font-family: 'Roboto', sans-serif;
-            overflow: hidden;
-        }
-        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .main{
-            width: 100px;
-            height: 100px;
-            background: #1ba54e;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(255, 158, 158);
-            font-size: 1.2em;
-            border: 4px solid #E59934;
-            padding: 4px;
-            transition: all 0.3s ease;
-        }
-        .main:hover{
-            border: 4px solid #AD723A;
-        }
-        h4{
-            position: relative;
-            top: -25px;
-            color: #14213d;
-        }
-        h4 a{
-            color: #023e8a;
-        }
-        h3{
-            color: #14213d;
-        }
-        .top{
-            position: absolute;
-            top: 20;
-            left: 20px;
-            border: 3px solid #fff;
-            padding: 10px;
-            border-radius: 30px;
-            background: #adadad;
+            background: #160040;
         }
         .circle{
             display: flex;
@@ -96,18 +60,11 @@
     </style>
 </head>
 <body>
-    <h3 class="top">Under Construction !</h3>
-    <div class="container">
-        <div class="main">
-            <div class="circle">
-                <div class="logo"></div>
-                <div class="text">
-                    <p>Shahin Sarkar - Creative Frontend Developer -</p>
-                </div>
-            </div>
+    <div class="circle">
+        <div class="logo"></div>
+        <div class="text">
+            <p>Shahin Sarkar - Creative Frontend Developer -</p>
         </div>
-        <h3>Shahin Sarkar</h3>
-        <h4>Frontend Web Developer (React, Vue)</h4>
     </div>
     <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
@@ -142,6 +99,10 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+        const text = document.querySelector('.text p');
+        text.innerHTML = text.innerText.split('').map( (char, i) => `<span style="transform: rotate(${i * 7.9}deg)">${char}</span>`).join('');
     </script>
     <script>
         const text = document.querySelector('.text p');
